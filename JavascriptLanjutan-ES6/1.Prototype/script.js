@@ -19,30 +19,46 @@
 // };
 
 // 2. FUNCTION DECLARATION
-const methodMahasiwa = {
-  makan: function (porsi) {
+// const methodMahasiwa = {
+//   makan: function (porsi) {
+//     this.energi += porsi; // === this.energi = this.energi + porsi;
+//     console.log(`Halo ${this.nama}, selamat makan!`);
+//   },
+
+//   main: function (jam) {
+//     this.energi -= jam;
+//     console.log(`Halo ${this.nama}, selamat bermain!`);
+//   },
+
+//   tidur: function (jam) {
+//     this.energi += jam * 2;
+//     console.log(`Halo ${this.nama}, selamat tidur!`);
+//   },
+// };
+
+// function Mahasiswa(nama, energi) {
+//   let mahasiswa = Object.create(methodMahasiwa);
+//   mahasiswa.nama = nama;
+//   mahasiswa.energi = energi;
+
+//   return mahasiswa;
+// }
+
+// let gilang = Mahasiswa("Gilang", 10);
+// let aslegedes = Mahasiswa("Aslegedes", 16);
+
+// 3. CONSTRUCTOR FUNCTION
+// keyword new
+function Mahasiswa(nama, energi) {
+  this.nama = nama;
+  this.energi = energi;
+  this.makan = function (porsi) {
     this.energi += porsi; // === this.energi = this.energi + porsi;
     console.log(`Halo ${this.nama}, selamat makan!`);
-  },
-
-  main: function (jam) {
+  };
+  this.main = function (jam) {
     this.energi -= jam;
     console.log(`Halo ${this.nama}, selamat bermain!`);
-  },
-
-  tidur: function (jam) {
-    this.energi += jam * 2;
-    console.log(`Halo ${this.nama}, selamat tidur!`);
-  },
-};
-
-function Mahasiswa(nama, energi) {
-  let mahasiswa = Object.create(methodMahasiwa);
-  mahasiswa.nama = nama;
-  mahasiswa.energi = energi;
-
-  return mahasiswa;
+  };
 }
-
-let gilang = Mahasiswa("Gilang", 10);
-let aslegedes = Mahasiswa("Aslegedes", 16);
+let gilang = new Mahasiswa("Gilang", 10);
