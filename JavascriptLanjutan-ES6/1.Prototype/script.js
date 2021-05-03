@@ -48,30 +48,30 @@
 // let aslegedes = Mahasiswa("Aslegedes", 16);
 
 // 2.1 Object.create() pada Function Declaration
-const methodMahasiwa = {
-  makan: function (porsi) {
-    this.energi += porsi;
-    console.log(`Halo ${this.nama}, selamat makan`);
-  },
-  main: function (jam) {
-    this.energi -= jam;
-    console.log(`Halo ${this.nama}, selamat bermain`);
-  },
-  tidur: function (jam) {
-    this.energi += jam * 2;
-    console.log(`Halo ${this.nama}, selamat tidur`);
-  },
-};
-function Mahasiswa(nama, energi) {
-  let mahasiswa = Object.create(methodMahasiwa);
-  mahasiswa.nama = nama;
-  mahasiswa.energi = energi;
+// const methodMahasiwa = {
+//   makan: function (porsi) {
+//     this.energi += porsi;
+//     console.log(`Halo ${this.nama}, selamat makan`);
+//   },
+//   main: function (jam) {
+//     this.energi -= jam;
+//     console.log(`Halo ${this.nama}, selamat bermain`);
+//   },
+//   tidur: function (jam) {
+//     this.energi += jam * 2;
+//     console.log(`Halo ${this.nama}, selamat tidur`);
+//   },
+// };
+// function Mahasiswa(nama, energi) {
+//   let mahasiswa = Object.create(methodMahasiwa);
+//   mahasiswa.nama = nama;
+//   mahasiswa.energi = energi;
 
-  return mahasiswa;
-}
+//   return mahasiswa;
+// }
 
-let gilang = Mahasiswa("Gilang", 24);
-let gugun = Mahasiswa("Gugun", 12);
+// let gilang = Mahasiswa("Gilang", 24);
+// let gugun = Mahasiswa("Gugun", 12);
 
 // 3. CONSTRUCTOR FUNCTION
 // keyword new
@@ -88,3 +88,26 @@ let gugun = Mahasiswa("Gugun", 12);
 //   };
 // }
 // let gilang = new Mahasiswa("Gilang", 10);
+
+// 3.1 PROTOTYPE PADA CONSTRUCTOR FUNCTION
+function Mahasiswa(nama, energi) {
+  this.nama = nama;
+  this.energi = energi;
+
+  Mahasiswa.prototype.makan = function (porsi) {
+    this.energi += porsi;
+    return `Halo ${this.nama}, selamat makan`;
+  };
+
+  Mahasiswa.prototype.main = function (jam) {
+    this.energi -= jam;
+    return `Halo ${this.nama}, selamat bermain`;
+  };
+
+  Mahasiswa.prototype.tidur = function (jam) {
+    this.energi += jam * 2;
+    return `Halo ${this.nama}, selamat tidur  `;
+  };
+}
+
+let gilang = new Mahasiswa("Gilang", 10);
