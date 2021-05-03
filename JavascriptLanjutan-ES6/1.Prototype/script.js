@@ -90,24 +90,48 @@
 // let gilang = new Mahasiswa("Gilang", 10);
 
 // 3.1 PROTOTYPE PADA CONSTRUCTOR FUNCTION
-function Mahasiswa(nama, energi) {
-  this.nama = nama;
-  this.energi = energi;
+// function Mahasiswa(nama, energi) {
+//   this.nama = nama;
+//   this.energi = energi;
 
-  Mahasiswa.prototype.makan = function (porsi) {
+//   Mahasiswa.prototype.makan = function (porsi) {
+//     this.energi += porsi;
+//     return `Halo ${this.nama}, selamat makan`;
+//   };
+
+//   Mahasiswa.prototype.main = function (jam) {
+//     this.energi -= jam;
+//     return `Halo ${this.nama}, selamat bermain`;
+//   };
+
+//   Mahasiswa.prototype.tidur = function (jam) {
+//     this.energi += jam * 2;
+//     return `Halo ${this.nama}, selamat tidur  `;
+//   };
+// }
+
+// let gilang = new Mahasiswa("Gilang", 10);
+
+// 3.2 Versi Class nya PROTOTYPE
+class Mahasiswa {
+  constructor(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+  }
+  makan(porsi) {
     this.energi += porsi;
     return `Halo ${this.nama}, selamat makan`;
-  };
+  }
 
-  Mahasiswa.prototype.main = function (jam) {
+  main(jam) {
     this.energi -= jam;
     return `Halo ${this.nama}, selamat bermain`;
-  };
+  }
 
-  Mahasiswa.prototype.tidur = function (jam) {
+  tidur(jam) {
     this.energi += jam * 2;
-    return `Halo ${this.nama}, selamat tidur  `;
-  };
+    return `Halo ${this.nama}, selamat tidur`;
+  }
 }
 
 let gilang = new Mahasiswa("Gilang", 10);
