@@ -8,7 +8,7 @@
 // window = global object
 // this = window
 
-// executin phase
+// execution phase
 
 // console.log(sayHello());
 // var nama = "Gilang";
@@ -48,15 +48,54 @@
 // a();
 
 // latian
-function satu() {
-  var nama = "Gilang";
-  console.log(nama);
-}
-function dua() {
-  console.log(nama);
-}
-console.log(nama);
-var nama = "aslegedes";
-satu();
-dua("geblek");
-console.log(nama);
+// function satu() {
+//   var nama = "Gilang";
+//   console.log(nama);
+// }
+// function dua() {
+//   console.log(nama);
+// }
+// console.log(nama);
+// var nama = "aslegedes";
+// satu();
+// dua("geblek");
+// console.log(nama);
+
+// 2.2 CLOSURE
+// function init() {
+//   // let nama = "Gilang";
+//   return function (nama) {
+//     console.log(nama);
+//   };
+// }
+// let panggilNama = init();
+// panggilNama("Gilang");
+// panggilNama("Aslegedes");
+
+// Factory Function = kita bikin function sesuai dengan function yg lain
+// function ucapkanSalam(waktu) {
+//   return function (nama) {
+//     console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan`);
+//   };
+// }
+
+// let selamatPagi = ucapkanSalam("Pagi");
+// let selamatSiang = ucapkanSalam("Siang");
+// let selamatMalam = ucapkanSalam("Malam");
+// // selamatPagi("Gilang");
+// // selamatSiang("Aslegedes");
+// // selamatMalam("Geblek");
+// console.dir(selamatMalam("Gilang"));
+
+let add = (function () {
+  let counter = 0;
+  return function () {
+    return ++counter;
+  };
+})();
+
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
