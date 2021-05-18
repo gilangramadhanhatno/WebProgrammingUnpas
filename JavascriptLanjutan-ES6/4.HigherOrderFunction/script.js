@@ -70,4 +70,4 @@ const pDurasi = document.querySelector(".total-durasi");
 pDurasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} Detik`;
 const jmlVideo = videos.filter((video) => video.textContent.includes("JAVASCRIPT LANJUTAN")).length;
 const pJmlVideo = document.querySelector(".jumlah-video");
-pJmlVideo.textContent = `${jmlVideo} VideoF`;
+pJmlVideo.textContent = `${jmlVideo} Video`;
