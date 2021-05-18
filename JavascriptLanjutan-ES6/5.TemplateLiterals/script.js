@@ -89,20 +89,50 @@
 // document.body.innerHTML = el;
 
 // 4. Nested - HTML Fragments bersarang
-const mhs = {
-  nama: "Gilang Ramadhan Hatno",
-  semester: 6,
-  mataKuliah: ["Pemrograman Web", "Perancangan Sistem Informasi", "Sistem Informasi Akuntansi", "Sistem Informasi Management"],
-};
-function cetakMataKuliah(matakuliah) {
-  return `<ol>
-    ${matakuliah.map((mk) => `<li>${mk}</li>`).join("")}
-  </ol>`;
+// const mhs = {
+//   nama: "Gilang Ramadhan Hatno",
+//   semester: 6,
+//   mataKuliah: ["Pemrograman Web", "Perancangan Sistem Informasi", "Sistem Informasi Akuntansi", "Sistem Informasi Management"],
+// };
+// function cetakMataKuliah(matakuliah) {
+//   return `<ol>
+//     ${matakuliah.map((mk) => `<li>${mk}</li>`).join("")}
+//   </ol>`;
+// }
+// const el = `<div class="mhs">
+//   <h2>${mhs.nama}</h2>
+//   <span class="semester">Semester : ${mhs.semester}</span>
+//   <h4>Mata Kuliah :</h4>
+//   ${cetakMataKuliah(mhs.mataKuliah)}
+// </div>`;
+// document.body.innerHTML = el;
+
+// Tagged Template
+// const nama = "Gilang Ramadhan Hatno";
+// const umur = 22;
+
+// function coba(strings, ...values) {
+//   // let result = "";
+//   // strings.forEach((str, i) => {
+//   //   result += `${str}${values[i] || ``}`;
+//   // });
+//   // return result;
+
+//   // menggunakan reduce
+//   return strings.reduce((result, str, i) => `${result}${str}${values[i] || ``}`, "");
+// }
+
+// const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun`;
+// console.log(str);
+
+// Highlight
+const nama = "Gilang Ramadhan Hatno";
+const umur = 22;
+const hobi = "Futsal";
+
+function highlight(strings, ...values) {
+  return strings.reduce((result, str, i) => `${result}${str}<span class='hl'>${values[i] || ""}</span>`, "");
 }
-const el = `<div class="mhs">
-  <h2>${mhs.nama}</h2>
-  <span class="semester">Semester : ${mhs.semester}</span>
-  <h4>Mata Kuliah :</h4>
-  ${cetakMataKuliah(mhs.mataKuliah)}
-</div>`;
-document.body.innerHTML = el;
+
+const str = highlight`Halo, nama saya ${nama}, saya ${umur}tahun, dan hobi saya adalah ${hobi}`;
+document.body.innerHTML = str;
