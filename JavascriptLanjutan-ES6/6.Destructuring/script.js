@@ -73,13 +73,91 @@
 // console.log(values.email);
 
 // Mengambil field pada object, setelah dikirm sebagai parameter untuk function
-const mhs = {
-  id: 123,
+// const mhs = {
+//   id: 123,
+//   nama: "Gilang Ramadhan",
+//   umur: 22,
+//   email: "gilangramadhanhatno@gmail.com",
+// };
+// function getIdMhs({ id }) {
+//   return id;
+// }
+// console.log(getIdMhs(mhs));
+
+// Destructuring
+// function penjumlahanPerkalian(a, b) {
+//   return [a + b, a * b];
+// }
+// const jumlah = penjumlahanPerkalian(2, 3)[0];
+// const kali = penjumlahanPerkalian(2, 3)[1];
+// console.log(jumlah);
+// console.log(kali);
+
+// function penjumlahanPerkalian(a, b) {
+//   return [a + b, a * b];
+// }
+// const [jumlah, kali] = penjumlahanPerkalian(2, 3);
+// console.log(jumlah);
+// console.log(kali);
+
+// array destructuring
+// function kalkulasi(a, b) {
+//   return [a + b, a - b, a * b];
+// }
+// const [tambah, kurang, kali, bagi = "tidak ada"] = kalkulasi(2, 3); // return value harus berurutan
+// console.log(tambah);
+// console.log(kurang);
+// console.log(kali);
+// console.log(bagi);
+
+// object destructuring
+// function kalkulasi(a, b) {
+//   return {
+//     tambah: a + b,
+//     kurang: a - b,
+//     kali: a * b,
+//     bagi: a / b,
+//   };
+// }
+// const { bagi, kali, kurang, tambah } = kalkulasi(2, 3);
+// console.log(tambah);
+// console.log(kurang);
+// console.log(bagi);
+// console.log(kali);
+
+// Destructuring Function arguments
+// const mhs1 = {
+//   nama: "Gilang Ramadhan",
+//   umur: 22,
+//   email: "gilangramadhanhatno@gmail.com",
+// };
+// function cetakMhs(mhs) { // tanpa destructuring
+//   return `Halo nama saya ${mhs.nama} dan saya ${mhs.umur} tahun`;
+// }
+// console.log(cetakMhs(mhs1));
+
+// const mhs1 = {
+//   nama: "Gilang Ramadhan",
+//   umur: 22,
+//   email: "gilangramadhanhatno@gmail.com",
+// };
+// function cetakMhs({nama, umur}) { // dengan destructuring
+//   return `Halo nama saya ${nama} dan saya ${umur} tahun`;
+// }
+// console.log(cetakMhs(mhs1));
+
+const mhs1 = {
   nama: "Gilang Ramadhan",
   umur: 22,
   email: "gilangramadhanhatno@gmail.com",
+  nilai: {
+    tugas: 78,
+    uts: 86,
+    uas: 90,
+  },
 };
-function getIdMhs({ id }) {
-  return id;
+function cetakMhs({ nama, umur, email, nilai: { tugas, uts, uas } }) {
+  // dengan destructuring
+  return `Halo nama saya ${nama}, saya ${umur} tahun, dan nilai uas saya adalah ${uas}`;
 }
-console.log(getIdMhs(mhs));
+console.log(cetakMhs(mhs1));
