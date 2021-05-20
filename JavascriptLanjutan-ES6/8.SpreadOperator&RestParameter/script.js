@@ -29,6 +29,59 @@
 // const mhs = [...liMhs].map((m) => m.textContent);
 // console.log(mhs);
 
-const nama = document.querySelector(".nama");
-const huruf = [...nama.textContent].map((h) => `<span>${h}</span>`).join("");
-nama.innerHTML = huruf;
+// const nama = document.querySelector(".nama");
+// const huruf = [...nama.textContent].map((h) => `<span>${h}</span>`).join("");
+// nama.innerHTML = huruf;
+
+// Rest Parameter
+// function myFunc(a, b, ...myArgs) {
+//   return `a = ${a}, b = ${b}, myArgs = ${myArgs}`;
+// }
+// console.log(myFunc(1, 2, 3, 4, 5));
+
+// function myFunc(...myArgs) {
+//   return myArgs;
+// }
+// console.log(myFunc(1, 2, 3, 4, 5));
+
+// function myFunc() {
+//   // return Array.from(arguments);
+//   return [...arguments];
+// }
+// console.log(myFunc(1, 2, 3, 4, 5));
+
+// function jumlahkan(...angka) {
+//   // let total = 0;
+//   // for (const a of angka) {
+//   //   total += a;
+//   // }
+//   // return total;
+
+//   return angka.reduce((a, b) => a + b);
+// }
+// console.log(jumlahkan(1, 2, 3, 4, 5));
+
+// array destructuring
+// const kelompok1 = ["Gilang", "Aslegedes", "Geblek", "Kunyuk", "Sugi"];
+// const [ketua, wakil, ...anggota] = kelompok1;
+// console.log(anggota);
+
+// object destructuring
+// const team = {
+//   pm: "Daka",
+//   frontend1: "Gilang",
+//   frontend2: "Aslegedes",
+//   backend: "Jebak",
+//   ux: "Alfi",
+//   devOps: "Putri",
+// };
+// const { pm, ...myTeam } = team;
+// console.log(myTeam);
+
+// Filtering
+function filterBy(type, ...values) {
+  return values.filter((v) => typeof v === type);
+}
+console.log(filterBy("string", 1, 2, "Gilang", "Aslegedes", true, false, "Geblek", 20));
+console.log(filterBy("number", 1, 2, "Gilang", "Aslegedes", true, false, "Geblek", 20));
+console.log(filterBy("boolean", 1, 2, "Gilang", "Aslegedes", true, false, "Geblek", 20));
