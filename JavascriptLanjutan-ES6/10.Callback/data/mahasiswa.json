@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Gilang Ramadhan Hatno",
+    "npm": "10416142",
+    "email": "gilangramadhanhatno@gmail.com",
+    "jurusan": "Sistem Informasi",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Ngale",
+    "npm": "10416111",
+    "email": "ngale@gmail.com",
+    "jurusan": "Sistem Komputer",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Aslegedes",
+    "npm": "10416222",
+    "email": "aslegedes@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 3
+  }
+]
